@@ -18,6 +18,9 @@ var ViewModel = function(token) {
   // Current token, used to communicate with Anyfetch
   self.token = ko.observable((token || '').toString());
 
+  // Have we done our first search yet?
+  self.hasDoneFirstSearch = ko.observable(false);
+
   // Current search query (simple string)
   // binded to text inputs
   self.searchQuery = ko.observable('tariq krim');
@@ -30,6 +33,7 @@ var ViewModel = function(token) {
 
   // Search for results
   self.doSearch = function doSearch() {
+    self.hasDoneFirstSearch(true);
     console.log("Searching for query:", self.searchQuery());
     $.ajax("https://api-staging.anyfetch.com/documents",
     {

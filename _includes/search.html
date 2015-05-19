@@ -1,4 +1,4 @@
-<section id="search">
+<section id="search" data-bind="visible: hasDoneFirstSearch()">
   <form data-bind="submit:doSearch" class="form-inline">
     <input type="text" class="form-control" placeholder="What are you looking for?" data-bind='value:searchQuery, valueUpdate: "afterkeydown"' />
     <button type="submit" data-bind="enable: searchQuery().length > 0">Search</button>
