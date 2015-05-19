@@ -1,0 +1,61 @@
+.anyfetch-document-full {
+  header.anyfetch-header {
+    background-color: whitesmoke;
+    border-bottom: solid 1px lightgray;
+    border-top: solid 1px lightgray;
+    padding: 0.5em;
+    overflow: auto;
+    .anyfetch-title-group {
+      h1.anyfetch-title {
+        font-size: 1.4em;
+        color: #444;
+        margin-top: 0;
+        margin-bottom: 0.4em;
+      }
+      p.anyfetch-title-detail {
+        margin-top: 0.4em;
+        margin-bottom: 0.4em;
+      }
+    }
+  }
+  main.anyfetch-content {
+    overflow: auto;
+    padding: 0.5em;
+
+    .anyfetch-section-title {
+      margin-bottom: .8em;
+    }
+  }
+  article.anyfetch-thread-part {
+    margin: 0 -0.5em;
+  }
+
+  &.anyfetch-type-contact,
+  &.anyfetch-type-event {
+    ul {
+      margin-top: .8em;
+    }
+    p {
+      margin-top: .8em;
+    }
+  }
+
+
+  &.anyfetch-type-email-thread {
+    article.anyfetch-thread-part header.anyfetch-header p.anyfetch-title-detail {
+      margin: 0;
+    }
+    article.anyfetch-thread-part header.anyfetch-header {
+      background-color: lighten(whitesmoke, 2%);
+    }
+
+    ul.anyfetch-pill-list,
+    ul.anyfetch-inline-list {
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-right: 2em;
+      box-sizing: border-box;
+    }
+  }
+
+}

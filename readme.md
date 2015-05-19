@@ -7,3 +7,7 @@
 
 
 Built on top of [AnyFetch API](http://developers.anyfetch.com).
+
+## Installation?
+
+Clone the repo, then run `bower install` and `jekyll serve --watch`.

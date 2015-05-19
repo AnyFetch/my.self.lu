@@ -1,0 +1,27 @@
+{
+  "name": "my.self.lu",
+  "version": "0.0.1",
+  "description": "Your personal search engine",
+  "homepage": "https://github.com/AnyFetch/my.self.lu",
+  "private": true,
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "anyfetch",
+    "search",
+    "context",
+    "self"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "anyfetch-assets": "~4.0.0"
+  }
+}

@@ -1,0 +1,87 @@
+@charset "utf-8";
+@import "icons.less";
+@import "full.less";
+@import "header.less";
+@import "list.less";
+
+.anyfetch-document-snippet {
+  margin: 0;
+  padding: 0.5em;
+  main.anyfetch-content {
+    font-weight: lighter;
+  }
+  h1.anyfetch-title {
+    font-size: 1em;
+    font-weight: bold;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;
+    max-height: 1.5em;
+    margin: 0;
+  }
+
+  // Clearfix
+  overflow: hidden;
+  zoom: 1;
+}
+
+.anyfetch-document-snippet > *,
+.anyfetch-document-snippet p,
+.anyfetch-document-snippet figure {
+  margin: 0;
+  padding: 0;
+}
+
+figure.anyfetch-aside-image {
+  height: 4em;
+  float: left;
+  margin: 0;
+  margin-right: 1em;
+  img {
+    height: 100%;
+  }
+}
+
+hgroup.anyfetch-title-group {
+  overflow: hidden;
+}
+
+
+span.anyfetch-hlt {
+  background-color: lightyellow;
+}
+
+li.anyfetch-hlt {
+  background-color: lightyellow;
+}
+
+.anyfetch-right-arrow {
+  display: inline;
+}
+
+.anyfetch-right-arrow:before {
+  color: gray;
+  content: "→";
+}
+
+.anyfetch-email:before {
+  content: "<";
+}
+
+.anyfetch-email:after {
+  content: ">";
+}
+
+.anyfetch-date {
+  font-style: italic;
+}
+
+article.anyfetch-document-snippet.anyfetch-type-contact h1.anyfetch-title,
+article.anyfetch-document-snippet.anyfetch-type-image h1.anyfetch-title {
+  width: auto;
+}
+
+main.anyfetch-content {
+  overflow-x: hidden;
+}
