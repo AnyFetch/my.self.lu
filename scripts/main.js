@@ -1,3 +1,4 @@
+// Model to store search results
 var ResultModel = function(data) {
   var self = this;
 
@@ -6,6 +7,7 @@ var ResultModel = function(data) {
   });
 };
 
+// Main holder for all data
 var ViewModel = function(token) {
   var self = this;
 
@@ -50,6 +52,8 @@ var ViewModel = function(token) {
       }
     });
   };
+
+  self.doSearch();
 };
 
 var currentToken = Cookies.get("token");

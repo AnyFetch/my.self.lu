@@ -6,9 +6,7 @@
 
   <div class="results" data-bind="foreach: results">
     <div class="result">
-      <div data-bind="html: rendered_snippet()"></div>
+      <div data-bind="html: rendered_snippet()" class="result_content"></div>
     </div>
   </div>
 </section>
-
-<pre data-bind="text: ko.toJSON($data, null, 2)"></pre>
