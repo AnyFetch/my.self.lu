@@ -1,7 +1,7 @@
 # my.self.lu
 
 > Are you loosing yourself?
-> Find your self
+> Find your self.
 
 [my.self.lu](http://my.self.lu) is your own personal search engine.
 
