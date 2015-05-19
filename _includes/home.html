@@ -1,7 +1,11 @@
-<section id="main" class="globally_centered" data-bind="visible: false">
+<section id="main" class="globally_centered" data-bind="visible: !hasDoneFirstSearch()">
 
-  <div class="holder">
-  Your personal search engine.
-  <input type="text" class="form-control" placeholder="What are you looking for?" />
+  <div class="holder text-center">
+    <p><img src="images/self.png" alt="my.self" /></p>
+    <p>Your personal search engine.</p>
+    <form data-bind="submit:doSearch" class="form-inline">
+      <input type="text" class="form-control" placeholder="What are you looking for?" data-bind='value:searchQuery, valueUpdate: "afterkeydown"' />
+      <button type="submit" data-bind="enable: searchQuery().length > 0">Search</button>
+    </form>
   </div>
 </section>

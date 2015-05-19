@@ -1,10 +1,16 @@
-<section id="search">
-  <form data-bind="submit:doSearch" class="form-inline">
+<section id="search" data-bind="visible: hasDoneFirstSearch()">
+  <img src="images/self.png" alt="my.self" class="pull-left logo" />
+
+  <form data-bind="submit:doSearch" class="form-inline search_form">
     <input type="text" class="form-control" placeholder="What are you looking for?" data-bind='value:searchQuery, valueUpdate: "afterkeydown"' />
     <button type="submit" data-bind="enable: searchQuery().length > 0">Search</button>
   </form>
 
-  <div class="results" data-bind="foreach: results">
+  <div class="loading" data-bind="visible: isLoading()">
+    <img src="images/loader.gif" alt="Loading" />
+  </div>
+
+  <div class="results" data-bind="foreach: results, visible: !isLoading()">
     <div class="result" data-bind="click: onClick">
       <div data-bind="html: rendered_snippet()" class="result_content"></div>
     </div>

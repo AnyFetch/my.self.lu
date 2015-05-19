@@ -18,9 +18,15 @@ var ViewModel = function(token) {
   // Current token, used to communicate with Anyfetch
   self.token = ko.observable((token || '').toString());
 
+  // Have we done our first search yet?
+  self.hasDoneFirstSearch = ko.observable(false);
+
   // Current search query (simple string)
   // binded to text inputs
   self.searchQuery = ko.observable('tariq krim');
+
+  // Are we loading right now?
+  self.isLoading = ko.observable(true);
 
   // Raw results from the API (not an observable, not on self)
   var rawResults = null;
@@ -30,8 +36,10 @@ var ViewModel = function(token) {
 
   // Search for results
   self.doSearch = function doSearch() {
+    self.isLoading(true);
+    self.hasDoneFirstSearch(true);
     console.log("Searching for query:", self.searchQuery());
-    $.ajax("https://api-staging.anyfetch.com/documents",
+    $.ajax(apiUrl + "/documents",
     {
       data: {
         search: self.searchQuery(),
@@ -49,9 +57,12 @@ var ViewModel = function(token) {
 
         console.log(results);
         self.results(results);
+        self.isLoading(false);
       },
       error: function(xhr, status, error) {
         console.error(status, error);
+        self.isLoading(false);
+
         // TODO: handle error.
       }
     });
@@ -59,8 +70,12 @@ var ViewModel = function(token) {
 
   self.doLogin = function doLogin() {
     var returnUri = encodeURIComponent(document.location + "oauth.html");
-    document.location = "https://manager-staging.anyfetch.com/oauth/authorize?client_id=555b34abaf91a41473bc25e7&redirect_uri=" + returnUri;
+    document.location = managerUrl + "/oauth/authorize?client_id=555b34abaf91a41473bc25e7&redirect_uri=" + returnUri;
   };
+
+  if(environment !== 'production') {
+    self.doSearch();
+  }
 };
 
 var currentToken = Cookies.get("token");
