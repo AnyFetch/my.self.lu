@@ -22,3 +22,35 @@ section.globally_centered {
     width: 250px;
   }
 }
+
+#search {
+  .results {
+    /* We first create a flex layout context */
+    display: flex;
+
+    /* Then we define the flow direction and if we allow the items to wrap
+     * Remember this is the same as:
+     * flex-direction: row;
+     * flex-wrap: wrap;
+     */
+    flex-flow: row wrap;
+
+    /* Then we define how is distributed the remaining space */
+    justify-content: space-around;
+
+    .result {
+      width: 15%;
+      min-width: 150px;
+      height: 150px;
+      margin: 15px;
+      border: 1px solid gray;
+      overflow: hidden;
+      display: flex;
+    }
+
+    .result_content {
+      min-width: 85%;
+      margin: auto;
+    }
+  }
+}
