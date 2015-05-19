@@ -39,7 +39,7 @@ var ViewModel = function(token) {
     self.isLoading(true);
     self.hasDoneFirstSearch(true);
     console.log("Searching for query:", self.searchQuery());
-    $.ajax("https://api-staging.anyfetch.com/documents",
+    $.ajax(apiUrl + "/documents",
     {
       data: {
         search: self.searchQuery(),
@@ -70,8 +70,12 @@ var ViewModel = function(token) {
 
   self.doLogin = function doLogin() {
     var returnUri = encodeURIComponent(document.location + "oauth.html");
-    document.location = "https://manager-staging.anyfetch.com/oauth/authorize?client_id=555b34abaf91a41473bc25e7&redirect_uri=" + returnUri;
+    document.location = managerUrl + "/oauth/authorize?client_id=555b34abaf91a41473bc25e7&redirect_uri=" + returnUri;
   };
+
+  if(environment !== 'production') {
+    self.doSearch();
+  }
 };
 
 var currentToken = Cookies.get("token");

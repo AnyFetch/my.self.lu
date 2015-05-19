@@ -4,7 +4,7 @@
 <html>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="scripts/cookie.js"></script>
-
+<script src="scripts/environment.js"></script>
 <script>
 function getParameterByName(name) {
   name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
@@ -14,7 +14,7 @@ function getParameterByName(name) {
 }
 
 $.ajax(
-  "https://manager-staging.anyfetch.com/oauth/access_token",
+  managerUrl + "/oauth/access_token",
   {
     method: "post",
     data: {

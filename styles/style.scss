@@ -38,8 +38,12 @@ section.globally_centered {
     /* Then we define how is distributed the remaining space */
     justify-content: space-around;
 
+    background: #e3e3e3;
+
+    padding: 0 15%;
+
     .result {
-      width: 15%;
+      width: 20%;
       min-width: 150px;
       height: 150px;
       margin: 15px;
@@ -47,10 +51,11 @@ section.globally_centered {
       overflow: hidden;
       display: flex;
       cursor: pointer;
+      background: white;
     }
 
     .result_content {
-      min-width: 85%;
+      min-width: 90%;
       margin: auto;
     }
   }
@@ -63,5 +68,14 @@ section.globally_centered {
     img {
       margin: auto;
     }
+  }
+
+  .search_form {
+    padding: 30px;
+    border-bottom: 1px solid #555555;
+  }
+
+  .logo {
+    padding-right: 20px;
   }
 }

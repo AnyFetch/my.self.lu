@@ -1,5 +1,7 @@
 <section id="search" data-bind="visible: hasDoneFirstSearch()">
-  <form data-bind="submit:doSearch" class="form-inline">
+  <img src="images/self.png" alt="my.self" class="pull-left logo" />
+
+  <form data-bind="submit:doSearch" class="form-inline search_form">
     <input type="text" class="form-control" placeholder="What are you looking for?" data-bind='value:searchQuery, valueUpdate: "afterkeydown"' />
     <button type="submit" data-bind="enable: searchQuery().length > 0">Search</button>
   </form>
