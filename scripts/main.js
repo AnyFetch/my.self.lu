@@ -16,7 +16,7 @@ var ViewModel = function(token) {
   var self = this;
 
   // Current token, used to communicate with Anyfetch
-  self.token = ko.observable(token.toString());
+  self.token = ko.observable((token || '').toString());
 
   // Current search query (simple string)
   // binded to text inputs
@@ -30,8 +30,8 @@ var ViewModel = function(token) {
 
   // Search for results
   self.doSearch = function doSearch() {
-    console.log("Searching", self.searchQuery());
-    $.ajax("https://api.anyfetch.com/documents",
+    console.log("Searching for query:", self.searchQuery());
+    $.ajax("https://api-staging.anyfetch.com/documents",
     {
       data: {
         search: self.searchQuery(),
@@ -57,7 +57,10 @@ var ViewModel = function(token) {
     });
   };
 
-  self.doSearch();
+  self.doLogin = function doLogin() {
+    var returnUri = encodeURIComponent(document.location + "oauth.html");
+    document.location = "https://manager-staging.anyfetch.com/oauth/authorize?client_id=555b34abaf91a41473bc25e7&redirect_uri=" + returnUri;
+  };
 };
 
 var currentToken = Cookies.get("token");
