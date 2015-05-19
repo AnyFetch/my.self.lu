@@ -3,4 +3,12 @@
     <input type="text" class="form-control" placeholder="What are you looking for?" data-bind='value:searchQuery, valueUpdate: "afterkeydown"' />
     <button type="submit" data-bind="enable: searchQuery().length > 0">Search</button>
   </form>
+
+  <div class="results" data-bind="foreach: results">
+    <div class="result">
+      <div data-bind="html: rendered_snippet()"></div>
+    </div>
+  </div>
 </section>
+
+<pre data-bind="text: ko.toJSON($data, null, 2)"></pre>
