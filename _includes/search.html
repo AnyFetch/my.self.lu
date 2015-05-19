@@ -4,7 +4,11 @@
     <button type="submit" data-bind="enable: searchQuery().length > 0">Search</button>
   </form>
 
-  <div class="results" data-bind="foreach: results">
+  <div class="loading" data-bind="visible: isLoading()">
+    <img src="images/loader.gif" alt="Loading" />
+  </div>
+
+  <div class="results" data-bind="foreach: results, visible: !isLoading()">
     <div class="result" data-bind="click: onClick">
       <div data-bind="html: rendered_snippet()" class="result_content"></div>
     </div>

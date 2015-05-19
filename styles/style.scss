@@ -54,4 +54,14 @@ section.globally_centered {
       margin: auto;
     }
   }
+
+  .loading {
+    display: flex;
+    align-items: center;
+    min-height: 300px;
+
+    img {
+      margin: auto;
+    }
+  }
 }

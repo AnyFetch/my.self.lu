@@ -25,6 +25,9 @@ var ViewModel = function(token) {
   // binded to text inputs
   self.searchQuery = ko.observable('tariq krim');
 
+  // Are we loading right now?
+  self.isLoading = ko.observable(true);
+
   // Raw results from the API (not an observable, not on self)
   var rawResults = null;
 
@@ -33,6 +36,7 @@ var ViewModel = function(token) {
 
   // Search for results
   self.doSearch = function doSearch() {
+    self.isLoading(true);
     self.hasDoneFirstSearch(true);
     console.log("Searching for query:", self.searchQuery());
     $.ajax("https://api-staging.anyfetch.com/documents",
@@ -53,9 +57,12 @@ var ViewModel = function(token) {
 
         console.log(results);
         self.results(results);
+        self.isLoading(false);
       },
       error: function(xhr, status, error) {
         console.error(status, error);
+        self.isLoading(false);
+
         // TODO: handle error.
       }
     });
