@@ -1,0 +1,85 @@
+ul.anyfetch-list-no-bullet {
+  padding-left: 1em;
+  li {
+    margin-bottom: .2em;
+  }
+}
+
+ul.anyfetch-list {
+  padding-left: 3em;
+}
+
+ul.anyfetch-list-no-bullet {
+  list-style: none;
+}
+
+ul.anyfetch-pill-list,
+ul.anyfetch-inline-list {
+  white-space: nowrap;
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  padding: .1em 0;
+  mask-image: linear-gradient(to left, transparent 0, white 2em);
+  -webkit-mask-image: linear-gradient(to left, transparent 0, white 2em);
+
+  li {
+    display: inline-block;
+    list-style: none;
+  }
+}
+
+.anyfetch-mobile-scroll ul.anyfetch-pill-list,
+.anyfetch-mobile-scroll ul.anyfetch-inline-list {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-right: 2em;
+  box-sizing: border-box;
+}
+
+ul.anyfetch-comma-list {
+  list-style: none;
+  li + li:before {
+    content: ", ";
+  }
+}
+
+.anyfetch-pill {
+  font-size: .75em;
+  padding: .1em .5em;
+  margin: 0;
+  border-radius: 1em;
+  color: gray;
+  border: solid 1px darkgray;
+}
+
+ul.anyfetch-check-list {
+  list-style: none;
+  padding: 0;
+  padding-left: 1em;
+
+  li {
+    padding: 0;
+    list-style-type: none;
+  }
+}
+
+h3.anyfetch-title-list {
+  font-size: 1.1em;
+}
+
+ul.anyfetch-comment-list li {
+  margin-top: 0.4em;
+  margin-bottom: 0.4em;
+}
+
+span.anyfetch-comment-author {
+  font-size: 0.75em;
+  padding: 0.2em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  margin: 0;
+  border-radius: 1em;
+  color: gray;
+  border: solid 1px darkgray;
+}

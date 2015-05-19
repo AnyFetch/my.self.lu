@@ -1,0 +1,26 @@
+{
+  "name": "anyfetch-assets",
+  "version": "4.0.1",
+  "homepage": "https://github.com/AnyFetch/anyfetch-assets",
+  "authors": [
+    "Robin Ricard <ricard.robin@gmail.com>",
+    "Antoine Bolvy <antoine.bolvy@gmail.com>"
+  ],
+  "description": "CSS/JS/Images resources for anyfetch projects",
+  "keywords": [
+    "anyfetch",
+    "snippet",
+    "css"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "moment": "~2.8.3"
+  }
+}
