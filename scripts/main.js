@@ -23,7 +23,7 @@ var ViewModel = function(token) {
 
   // Current search query (simple string)
   // binded to text inputs
-  self.searchQuery = ko.observable('tariq krim');
+  self.searchQuery = ko.observable(environment !== 'production' ? 'matthieu bacconnier' : '');
 
   // Are we loading right now?
   self.isLoading = ko.observable(true);
