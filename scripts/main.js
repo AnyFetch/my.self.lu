@@ -5,6 +5,10 @@ var ResultModel = function(data) {
   Object.keys(data).forEach(function(key) {
     self[key] = ko.observable(data[key]);
   });
+
+  self.onClick = function() {
+    window.open(this.actions().show);
+  };
 };
 
 // Main holder for all data
